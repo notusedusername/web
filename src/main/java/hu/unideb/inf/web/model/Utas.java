@@ -3,6 +3,7 @@ package hu.unideb.inf.web.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "utas")
 public class Utas {
 
     @Id

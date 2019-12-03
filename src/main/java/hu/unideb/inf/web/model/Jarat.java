@@ -3,11 +3,13 @@ package hu.unideb.inf.web.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "jarat")
 public class Jarat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "jaratszam")
+    @OneToOne(mappedBy = "jarat")
     private String jaratszam;
 
     @Column(name = "legitarsasag_kod")
@@ -20,6 +22,7 @@ public class Jarat {
     private String erkezesiRepter;
 
     @Column(name = "indulasi_ido")
+    @OneToOne(mappedBy = "indulasi_ido")
     private String indulasiIdo;
 
     @Column(name = "erkezesi_ido")

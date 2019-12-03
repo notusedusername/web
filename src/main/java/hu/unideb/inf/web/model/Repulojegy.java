@@ -4,11 +4,13 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
+@Table(name = "repulojegy")
 public class Repulojegy {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="jegy")
+    @OneToOne(mappedBy = "repulojegy")
     private String jegy;
 
     @Column(name = "utas_azon")

@@ -1,36 +1,38 @@
 package hu.unideb.inf.web.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
+@Table(name = "foglalas")
+@IdClass(FoglalasId.class)
 public class Foglalas {
-
+    @Id
     @Column(name="jegy")
-    private String jegy;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "repulojegy_jegy", referencedColumnName = "jegy")
+    private Repulojegy jegy;
 
+    @Id
     @Column(name="jaratszam")
-    private String jaratSzam;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "jarat_jaratszam", referencedColumnName = "jaratszam")
+    private Jarat jarat;
 
+    @Id
     @Column(name="indulasi_ido")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "jarat_indulasi_ido", referencedColumnName = "indulasi_ido")
     private Date indulasiIdo;
 
-    public String getJegy() {
+    public Repulojegy getJegy() {
         return jegy;
     }
 
-    public void setJegy(String jegy) {
+    public void setJegy(Repulojegy jegy) {
         this.jegy = jegy;
     }
 
-    public String getJaratSzam() {
-        return jaratSzam;
-    }
-
-    public void setJaratSzam(String jaratSzam) {
-        this.jaratSzam = jaratSzam;
-    }
 
     public Date getIndulasiIdo() {
         return indulasiIdo;
