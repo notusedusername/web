@@ -1,12 +1,13 @@
 package hu.unideb.inf.web.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 
+@Entity
 public class Repulojegy {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="jegy")
     private String jegy;
 
