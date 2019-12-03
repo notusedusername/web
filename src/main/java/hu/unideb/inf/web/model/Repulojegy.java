@@ -9,8 +9,7 @@ public class Repulojegy {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="jegy")
-    @OneToOne(mappedBy = "repulojegy")
+    @OneToOne(mappedBy = "jegy")
     private String jegy;
 
     @Column(name = "utas_azon")

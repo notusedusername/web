@@ -8,22 +8,27 @@ import java.sql.Date;
 @IdClass(FoglalasId.class)
 public class Foglalas {
     @Id
-    @Column(name="jegy")
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "repulojegy_jegy", referencedColumnName = "jegy")
+    //@OneToOne(cascade = CascadeType.ALL)
+    //@JoinColumn(name = "jegy", referencedColumnName = "jegy")
     private Repulojegy jegy;
 
     @Id
-    @Column(name="jaratszam")
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "jarat_jaratszam", referencedColumnName = "jaratszam")
+    @JoinColumn(name = "jaratszam", referencedColumnName = "jaratszam")
     private Jarat jarat;
 
     @Id
-    @Column(name="indulasi_ido")
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "jarat_indulasi_ido", referencedColumnName = "indulasi_ido")
+    @JoinColumn(name = "indulasi_ido", referencedColumnName = "indulasi_ido")
     private Date indulasiIdo;
+
+    public Jarat getJarat() {
+        return jarat;
+    }
+
+    public void setJarat(Jarat jarat) {
+        this.jarat = jarat;
+    }
 
     public Repulojegy getJegy() {
         return jegy;

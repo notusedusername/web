@@ -8,8 +8,7 @@ public class Jarat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "jaratszam")
-    @OneToOne(mappedBy = "jarat")
+    @OneToOne(mappedBy = "jaratszam")
     private String jaratszam;
 
     @Column(name = "legitarsasag_kod")
@@ -21,7 +20,6 @@ public class Jarat {
     @Column(name = "erkezesi_repter")
     private String erkezesiRepter;
 
-    @Column(name = "indulasi_ido")
     @OneToOne(mappedBy = "indulasi_ido")
     private String indulasiIdo;
 

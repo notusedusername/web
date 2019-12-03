@@ -3,6 +3,7 @@ package hu.unideb.inf.web;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -16,6 +17,7 @@ import javax.sql.DataSource;
 import java.io.IOException;
 
 @SpringBootApplication
+@EntityScan("hu.unideb.inf.web.model")
 public class WebApplication {
 
 	public static void main(String[] args) {
@@ -31,9 +33,9 @@ public class WebApplication {
 	public DataSource dataSource() throws IOException {
 		return DataSourceBuilder
 				.create()
-				.username("aXq5DpqGZl")
-				.password("YRdY79GffM")
-				.url("jdbc:mysql://remotemysql.com:3306").build();
+				.username("root")
+				//.password("YRdY79GffM")
+				.url("jdbc:mysql://127.0.01:3306/WEB").build();
 	}
 	@Bean
 	public JpaVendorAdapter jpaVendorAdapter() {
@@ -56,4 +58,5 @@ public class WebApplication {
 	public JpaTransactionManager transactionManager(EntityManagerFactory emf) {
 		return new JpaTransactionManager(emf);
 	}
+
 }

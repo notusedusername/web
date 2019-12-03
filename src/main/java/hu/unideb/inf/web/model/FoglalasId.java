@@ -6,13 +6,13 @@ public class FoglalasId {
 
     private Repulojegy jegy;
 
-    private String jaratSzam;
+    private Jarat jarat;
 
     private Date indulasiIdo;
 
-    public FoglalasId(Repulojegy jegy, String jaratSzam, Date indulasiIdo) {
+    public FoglalasId(Repulojegy jegy, Jarat jarat, Date indulasiIdo) {
         this.jegy = jegy;
-        this.jaratSzam = jaratSzam;
+        this.jarat = jarat;
         this.indulasiIdo = indulasiIdo;
     }
 }
